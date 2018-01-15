@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>pClone</title>
+
+	<script type="text/javascript" src="paper-full.min.js"></script>
+
+	<!-- local CSS -->
+	<link rel="stylesheet" type="text/css" href="pClone.css">
+
+	<!-- Define inlined PaperScript associate it with myCanvas -->
+	<script type="text/paperscript" canvas="myCanvas">
+	
+	var circles = [];
+
+	// Generates a field of dots 
+	function onKeyDown(event) {
+		//Variables for generating a random point, responsive to screen size 
+		var dimensions = new Point(view.size.width,view.size.height);
+		var randomPoint = Point.random();
+		var point = dimensions * randomPoint;
+
+		for (var i = 0; i < 100; i++)
+			// Create the new circle and add a random fill color
+			var newCircle = new Path.Circle(point, 100);
+			newCircle.fillColor = new Color(Math.random(), Math.random(), Math.random(), 1);
+			// Push the new circle onto the circles array
+			circles.push(newCircle);
+	}
+
+	function onFrame(event) {
+		for(var i = 0; i < circles.length; i++){
+			circles[i].fillColor.hue += 1;
+			circles[i].scale(.9);
+		}
+	}	
+
+
+
+	</script>
+</head>
+<body>
+	<canvas id="myCanvas" resize></canvas>
+</body>
+</html>
