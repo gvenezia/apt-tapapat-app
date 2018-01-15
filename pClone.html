@@ -8,30 +8,45 @@
 	<!-- local CSS -->
 	<link rel="stylesheet" type="text/css" href="pClone.css">
 
+	<!-- Howler.js -->
+	<script src="howler.js"></script>
+
 	<!-- Define inlined PaperScript associate it with myCanvas -->
 	<script type="text/paperscript" canvas="myCanvas">
 	
+	// Circles array for storying and animating circles
 	var circles = [];
+
+	// function to return random values
+	var rand = function() {return Math.random()};
 
 	// Generates a field of dots 
 	function onKeyDown(event) {
-		//Variables for generating a random point, responsive to screen size 
-		var dimensions = new Point(view.size.width,view.size.height);
-		var randomPoint = Point.random();
-		var point = dimensions * randomPoint;
 
-		for (var i = 0; i < 100; i++)
+		for (var i = 0; i < 10; i++){
+			// Variables for generating a random point, responsive to screen size 
+			var dimensions = new Point(view.size.width,view.size.height);
+			var randomPoint = Point.random();
+			var point = dimensions * randomPoint;
+
 			// Create the new circle and add a random fill color
-			var newCircle = new Path.Circle(point, 100);
-			newCircle.fillColor = new Color(Math.random(), Math.random(), Math.random(), 1);
+			var newCircle = new Path.Circle(point, 500);
+			newCircle.fillColor = new Color(rand(), rand(), rand(), 1);
 			// Push the new circle onto the circles array
 			circles.push(newCircle);
+		}
 	}
 
 	function onFrame(event) {
 		for(var i = 0; i < circles.length; i++){
-			circles[i].fillColor.hue += 1;
-			circles[i].scale(.9);
+			circles[i].fillColor.hue += 10;
+			circles[i].scale(.95);
+
+			if (circles[i].area < 1){
+				// Remove 1 item at 'i' index position
+				circles.splice(i, 1);
+				i--;
+			}
 		}
 	}	
 
