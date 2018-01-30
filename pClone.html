@@ -4,16 +4,16 @@
 	<title>pClone</title>
 
 	<!-- Paper.js -->
-	<script type="text/javascript" src="assets/lib/paper-full.min.js"></script>
+	<script type="text/javascript" src="assets/js/lib/paper-full.min.js"></script>
 
 	<!-- local CSS -->
-	<link rel="stylesheet" type="text/css" href="pClone.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/pClone.css">
 
 	<!-- Howler.js -->
-	<script src="assets/lib/howler.core.js"></script>
+	<script src="assets/js/lib/howler.core.js"></script>
 
 	<!-- Object with all the key names and sub-objects to set the color and sound sample for that corresponding key -->
-	<script type="text/javascript" src="assets/data.js"></script>
+	<script type="text/javascript" src="assets/js/data.js"></script>
 
 	<!-- inline PaperScript for the canvas in the html body -->
 	<script type="text/paperscript" canvas="myCanvas">
@@ -21,7 +21,7 @@
 	// Instructions 
 	var text = new PointText({
 	    point: [0, 0],
-	    content: 'To generate sound and animation, \npress a key, a-z or the spacebar \n(turn up your speakers!)\n(Note: contains flashing lights)',
+	    content: 'To generate sound and animation, press a key, a-z. \nBe sure to turn up your speakers!\n\n(Note: contains flashing lights)',
 	    fillColor: 'grey',
 	    fontFamily: 'Helvetica',
 	    fontWeight: 'bold',
