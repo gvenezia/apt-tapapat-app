@@ -10,6 +10,6 @@ For the sound, I used howler.js and the [Neural Synchrony](https://github.com/jo
 
 *(Note: Tapapat uses responsive design to fit the width of the viewscreen, but it currently requires a keyboard and so is not compatible with mobile)*
 
-![a screenshot of Tapapat](https://github.com/gvenezia/apt-tapapat-app/edit/master/pClone1.png
+![a screenshot of Tapapat](https://github.com/gvenezia/apt-tapapat-app/blob/master/pClone1.png)
 
 
